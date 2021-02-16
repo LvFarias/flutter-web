@@ -27,9 +27,3 @@ RUN flutter precache
 RUN yes "y" | flutter doctor --android-licenses
 RUN flutter doctor -v
 WORKDIR /usr/local/bin/app
-ENV SERVER_UP=/usr/local/bin/server/server.sh
-COPY ./server.sh ${SERVER_UP}
-RUN chmod +x ${SERVER_UP}
-ENV PORT=8080
-EXPOSE ${PORT}
-ENTRYPOINT [ "/usr/local/bin/server/server.sh" ]
